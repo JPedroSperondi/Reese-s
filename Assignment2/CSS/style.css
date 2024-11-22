@@ -1,0 +1,489 @@
+/*Body*/
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: blanchedalmond;
+}
+
+  /*Header*/
+  body > header {
+    position: fixed; /*So i can manipulate the logo easilu with top, left, etc*/
+    top: 0; 
+    width: 100vw; 
+    height: 10%; 
+    background-color: white;
+    display: flex;
+    z-index: 10;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    align-items: center; 
+  }
+  
+  
+  header>div:nth-child(1) {
+    position: relative;
+    width: 50%;
+    height: 100%;
+  }
+  
+  header>div>img {
+    position: absolute;
+    left: 40px;
+    height: auto;
+    width: 35%;
+  }
+
+  /*adjusting the space between my nav*/
+  header>div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    width: 50%;
+    height: 100%;
+  }
+  
+  header>div>a {
+    text-decoration: none;
+    color: rgba(47, 18, 18, 0.791);
+    font-size: larger;
+    font-weight: bold;
+    transition: color 0.25s;
+    position: relative;
+  }
+
+  
+  header>div>a:hover{
+    color: rgba(71, 26, 26, 0.86);
+    cursor: url('../IMG/Reeses_Cursor_resized.png'), auto; /*change my cursor image when hovering*/
+  }
+
+  /*Creating the line that appears when hovering the button*/
+  header>div>a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0; 
+    height: 2px;
+    background-color: #eb3108;
+    transition: width 0.3s ease;
+  }
+
+  a:hover::after {
+    width: 100%;
+    cursor: url('../IMG/Reeses_Cursor_resized.png'), auto;
+  }
+
+/*Masthead styling*/
+
+#Masthead{
+  height: 100vh;
+    width: 100%;
+    background: linear-gradient(to bottom, #fe5000, rgba(173, 81, 5, 0.791)); /*gradient background*/
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+#Masthead>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+#mast_container{
+    height: 70%;
+    width: 60%;
+    text-align: center;
+}
+
+#mast_container>img{
+    width: 90%;
+    height: 20%;
+}
+
+
+#Masthead>div:nth-child(2)>img{
+  height: auto;
+  width: 90%;
+}
+
+
+
+#mast_container>div>h1 {
+    font-family: "Cormorant Garamond";
+    font-size: 7vh;
+}
+
+#mast_container>button{
+    background-color: yellow;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    padding: 20px 80px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: border-color 0.25s, background-color 0.25s;
+}
+
+#mast_container>button:hover{
+    border-color: black;
+    cursor: url('../IMG/Reeses_Cursor_resized.png'), auto;
+}
+
+
+/*Main*/
+
+body > main {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Styling the upper part of the main*/
+#upper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh; 
+  padding-top: 10px;
+}
+
+#upper>h2{
+    padding-top: 10px;
+    font-family: 'Bebas Neue';
+    font-size: 9vh;
+}
+
+
+#upper>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:50%;
+    width:75%;
+    background-color: rgb(49, 19, 19);
+}
+
+/*Adjusting the image*/
+#upper>div>img{
+    width: 90%;
+    height: 90%;
+}
+
+/*Styling the lower part*/
+#lower {
+  height: 1300px;
+  width: auto;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#lower > h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+/*Adjusting the space between the products*/
+#lower > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 50%; 
+  width: 100%;
+}
+
+#lower > div > div {
+  flex: 1;
+  text-align: center;
+}
+
+#lower > div > div > a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-top: 10px;
+  transition: color 0.25s;
+  position: relative;
+}
+
+/*Product styling*/
+
+#lower > div > div > a.product-title {
+  font-family: 'Bebas Neue';
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/*Bar created when hovered*/
+#lower > div > div > a.product-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: rgb(49, 19, 19);
+  transition: width 0.3s ease;
+}
+
+#lower > div > div > a.product-title:hover::after {
+  width: 100%; /* Full width on hover */
+  cursor: url('../IMG/Reeses_Cursor_resized.png'), auto;
+}
+
+#lower > div > div > a > img {
+  height: 90%;
+  width: 90%;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+/*zoom in when hovered*/
+#lower > div > div > a > img:hover {
+  transform: scale(1.1);
+  cursor: url('../IMG/Reeses_Cursor_resized.png'), auto;
+}
+
+#lower > div > div > a:hover {
+  color: rgb(49, 19, 19); /* Change text color on hover */
+  cursor: url('../IMG/Reeses_Cursor_resized.png'), auto;
+}
+
+/*Footer*/
+
+footer {
+  height: 60vh;
+  text-align: center;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+footer>img{
+  padding-top: 12px;
+  height: 17%;
+  width: auto;
+}
+
+footer>div{
+  height: 80%;
+  width: 100%;
+  display: flex;
+}
+
+footer>div>div{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer>div>div:nth-child(1){
+  flex-direction: column;
+}
+
+/*Contact styling*/
+
+/*Container with a gradient background*/
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #fe5000, rgba(173, 81, 5, 0.791));
+}
+
+.contact-container h3 {
+  margin-bottom: 20px;
+  font-family: 'Bebas Neue';
+  font-size: 24px;
+  color: black;
+}
+
+/*form styling*/
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+form label {
+  text-align: left;
+  font-size: 14px;
+  color: black;
+  font-family: 'Bebas Neue';
+}
+
+form input, 
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: rgb(30, 30, 30);
+  color: white;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus, 
+form textarea:focus {
+  border-color: white;
+  box-shadow: 0 0 5px orange; 
+  outline: none;
+}
+
+form button {
+  background-color: rgb(255, 77, 0); 
+  color: black;
+  border: 1px solid orange;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: white;
+  color: orange;
+  transform: scale(1.05);
+  cursor: url('../IMG/Reeses_Cursor_resized.png'), auto;
+}
+
+/*Contact information styling*/
+
+.contact-info {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 300px;
+  font-family: 'Bebas Neue';
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/*Responsive design*/
+
+@media screen and (max-width: 1024px) {
+  header>div>img {
+    top: 20px;
+    width: 40%;
+  }
+
+  .contact-info h3 {
+  font-size:30px
+}
+
+.contact-info p {
+  font-size:25px
+}
+
+}
+
+@media screen and (max-width:768px){
+  #mast_container>div>h1 {
+    font-family: "Cormorant Garamond";
+    font-size: 5vh;
+  }
+
+  #Masthead{
+    flex-direction:column;
+    align-items:center;
+    height:1300px
+  }
+
+  #Masthead>div:nth-child(2)>img{
+  height: auto;
+  width: 170%;
+}
+  footer>div{
+    flex-direction:column;
+  }
+}
+
+@media screen and (max-width:425px){
+  header{
+    flex-direction:column;
+  }
+
+  header>div:nth-child(2){
+    width:90%;
+  }
+
+  header>div>img{
+    height:50px;
+    width:auto;
+    top:7px;
+    left:12%;
+  }
+
+  #mast_container{
+    padding-right:90px;
+  }
+
+  #mast_container>img{
+    width:250px;
+    
+  }
+
+  #mast_container>div{
+    height:500px;
+    display:flex;
+  }
+
+  #mast_container>div>h1 {
+    font-size: 4vh;
+  }
+
+  #upper>h2{
+    text-align:center;
+  }
+
+  #lower{
+    height:3200px;
+  }
+
+  #lower>div{
+    height:1500px;
+    flex-direction:column;
+  }
+
+  #lower>div>div>a:nth-child(2){
+    font-size:25px;
+  }
+  
+}
